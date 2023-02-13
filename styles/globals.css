@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hover-header {
+    @apply hover:bg-[#80808029] rounded-md py-1 px-[2px] transition-all;
+  }
+  .body-center {
+    @apply max-w-[1800px] mx-auto my-0 p-4;
+  }
+  .folder-container-style {
+    @apply text-[#fff] relative h-[270px] overflow-hidden flex items-end p-9 justify-between cursor-pointer transition-transform border-[#4b29294b] border rounded-[40px] bg-cover bg-no-repeat before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:bg-overlay;
+  }
+  .folder-quantity {
+    @apply underline opacity-0 group-hover:opacity-100 z-40;
+  }
+  .border-style {
+    @apply border border-solid rounded-sm border-[#8080807f];
+  }
+}
