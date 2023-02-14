@@ -18,4 +18,7 @@
   .border-style {
     @apply border border-solid rounded-sm border-[#8080807f];
   }
+  .scroll-bar-styles {
+    @apply scrollbar scrollbar-track-[pink] scrollbar-thumb-[#3b937b7b] scrollbar-w-2 scrollbar-thumb-rounded-2xl;
+  }
 }

@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "@/store/hooks/hooks";
-import { addProductIntoCart, selectItems } from "@/store/slicers/cartSlicer";
+import { useAppDispatch } from "@/store/hooks/hooks";
+import { addProductIntoCart } from "@/store/slicers/cartSlicer";
 import { iProduct } from "@/Types/common-types";
 import Image from "next/image";
 import Link from "next/link";

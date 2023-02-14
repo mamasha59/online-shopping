@@ -1,33 +1,65 @@
-import React from "react";
-import { FC } from "react";
+import { FC, useState, useEffect, useRef } from "react";
 
 import { CgDetailsMore } from "react-icons/cg";
 import { BiSearchAlt } from "react-icons/bi";
 
 import { useInView } from "react-intersection-observer";
 import Cart from "../Menu/Cart";
+import { itemCatalog } from "@/components/MenuCatalog/menu-catalog-items/menu-catalog-items";
+import Link from "next/link";
 
 const Search: FC = () => {
+  const [open, setOpen] = useState<boolean | null>(false);
+  const popupBlock = useRef<HTMLDivElement>(null);
+
   const { ref, inView } = useInView({
-    /* Optional options */
     threshold: 0.1,
-    delay:100,
-    rootMargin:"10px"
+    delay: 100,
+    rootMargin: "10px",
   });
+
+  useEffect(() => {
+    // закрытие попапа по клике снаружи
+    const closePopup = (e: Event) => {
+      if (!popupBlock.current?.contains(e.target as Element)) setOpen(false);
+    };
+    window.addEventListener("click", closePopup);
+    return () => window.removeEventListener("click", closePopup);
+  }, []);
 
   return (
     <div ref={ref}>
       <div
-        className={`flex px-2 py-4 max-h-[100px] transition-opacity ${
-          !inView && "max-w-[1800px] flex mx-auto my-0 fixed top-0 right-0 left-0 z-50 m-0 backdrop-blur-lg"
-        }`}
+        className={`flex px-2 py-4 max-h-[100px] transition-opacity`}
       >
-        <div className="grow max-w-[280px] shrink-0 z-10 hover:shadow-md transition-all hover:scale-110 lg:text-[12px]">
-          <button className="flex items-center text-[#fff] bg-green pl-8 pr-4 py-4 uppercase rounded-l-md w-full h-full">
+        <div
+          ref={popupBlock}
+          className="relative grow max-w-[280px] shrink-0 z-10 hover:shadow-md transition-all lg:text-[12px]"
+        >
+          <button
+            onClick={() => setOpen(!open)}
+            className={`flex items-center text-[#fff] bg-green pl-8 pr-4 py-4 uppercase rounded-l-md w-full h-full transition-all duration-700  ${
+              open && "rounded-b-none"
+            }`}
+          >
             Каталог продукции <CgDetailsMore className="ml-6 text-2xl" />
           </button>
+          {/* попап с категориями */}
+          <div
+            className={`absolute flex flex-col gap-4 left-0 bg-green w-full shadow-xl text-[#fff] overflow-y-scroll max-h-[90vh] transition-all duration-500 scroll-bar-styles ${open ? "opacity-100 visible" : 'opacity-0 invisible'}`}>
+            {itemCatalog.map((item) => (
+              <Link href={item.link} key={item.name} className="border-b p-2">
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          {/* */}
         </div>
-        <div className={`border-[9px] border-[#8080805f] rounded-r-md pl-3 pr-9 py-2 ml-[-2px] relative  w-full grow-0 shrink ${!inView && 'bg-[#fff] border-[pink]'}`}>
+        <div
+          className={`border-[9px] border-[#8080805f] rounded-r-md pl-3 pr-9 py-2 ml-[-2px] relative  w-full grow-0 shrink ${
+            !inView && "bg-[#fff] border-[pink]"
+          }`}
+        >
           <form>
             <input
               className="text-[#000] italic w-full outline-none"
@@ -40,8 +72,14 @@ const Search: FC = () => {
           </form>
         </div>
       </div>
-      <div className={` ${!inView ? 'block transition-all fixed right-5 shadow-md rounded-md animate-bounce bg-[pink] text-xl z-50' : 'hidden'}`}>
-          <Cart/>  
+      <div
+        className={` ${
+          !inView
+            ? "block transition-all fixed right-5 shadow-md rounded-md animate-bounce bg-[pink] text-xl z-50"
+            : "hidden"
+        }`}
+      >
+        <Cart />
       </div>
     </div>
   );

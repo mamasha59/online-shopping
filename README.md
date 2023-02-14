@@ -7,7 +7,9 @@ npm run dev запустить режим разработчика
 - Redux Toolkit  
 - Prettier  
 - TypeScript  
-- TailWind Css  
+- TailWind Css / Tailwind ScrollBar 
+- ReactSlick слайдер 
+- react-intersection-observer
 
 
 ## ToDo:  

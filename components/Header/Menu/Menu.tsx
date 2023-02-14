@@ -1,15 +1,14 @@
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { item } from "./menu-data";
-import React from "react";
-import { FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const Menu: FC = () => {
-  const [open, setOpen] = React.useState(false);
-  const popup = React.useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const popup = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     //закрывать попап по клику вне
     const handleClickOut = (event: any): void => {
       if (popup.current) {

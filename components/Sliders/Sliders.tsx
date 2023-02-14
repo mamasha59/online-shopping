@@ -1,7 +1,4 @@
-import React, { FC } from "react";
-import Link from "next/link";
-import Image from "next/image";
-
+import { FC } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
