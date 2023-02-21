@@ -10,10 +10,15 @@ export interface iProduct{
   brend:string,
   price:number,
   altDescription:string,
-  id:number,
+  id:number | string,
+  category?:string,
 }
 
 export interface iCartItem{
   product:iProduct,
   quantity:number
+}
+
+export interface iSingleData{
+    data: iProduct,
 }

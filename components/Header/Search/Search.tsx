@@ -13,9 +13,8 @@ const Search: FC = () => {
   const popupBlock = useRef<HTMLDivElement>(null);
 
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 1,
     delay: 100,
-    rootMargin: "10px",
   });
 
   useEffect(() => {
@@ -28,10 +27,8 @@ const Search: FC = () => {
   }, []);
 
   return (
-    <div ref={ref}>
-      <div
-        className={`flex px-2 py-4 max-h-[100px] transition-opacity`}
-      >
+    <div ref={ref} className='h-[90px] my-3'>
+      <div className={`flex px-2 py-4 max-h-[100px] transition-opacity ${!inView && 'fixed top-0 left-0 right-0 z-20 shadow-sm bg-cyan-100'}`}>
         <div
           ref={popupBlock}
           className="relative grow max-w-[280px] shrink-0 z-10 hover:shadow-md transition-all lg:text-[12px]"
@@ -46,7 +43,10 @@ const Search: FC = () => {
           </button>
           {/* попап с категориями */}
           <div
-            className={`absolute flex flex-col gap-4 left-0 bg-green w-full shadow-xl text-[#fff] overflow-y-scroll max-h-[90vh] transition-all duration-500 scroll-bar-styles ${open ? "opacity-100 visible" : 'opacity-0 invisible'}`}>
+            className={`absolute flex z-50 flex-col gap-4 left-0 bg-green w-full shadow-xl text-[#fff] overflow-y-scroll max-h-[90vh] transition-all duration-500 scroll-bar-styles ${
+              open ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
+          >
             {itemCatalog.map((item) => (
               <Link href={item.link} key={item.name} className="border-b p-2">
                 {item.name}

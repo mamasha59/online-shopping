@@ -11,7 +11,9 @@ const CatalogLayot: FC<LayoutProps> = ({ children }) => {
       <h2 className="text-4xl mb-5">Title</h2>
       <div className="flex">
         <MenuCatalog />
-        {children}
+        <div className="px-3 w-full flex gap-[35px] flex-wrap">
+          {children}
+        </div>
       </div>
     </main>
   );

@@ -22,19 +22,19 @@ export const itemCatalog: TypesItem[] = [
     link: "/catalog/spirometerAndBreathGym",
   },
   {
-    name: "Трахеостома",  // без страницы
+    name: "Трахеостома",
     link: "/catalog/tracheostomy",
   },
   {
-    name: "Голосообразующие аппараты",// без страницы
+    name: "Голосообразующие аппараты",
     link: "/catalog/voiceApparats",
   },
   {
-    name: "Гастростома",// без страницы
+    name: "Гастростома",
     link: "/catalog/gastrostome",
   },
   {
-    name: "Энтеральное питание",// без страницы
+    name: "Энтеральное питание",
     link: "/catalog/enteralFood",
   },
   {
@@ -50,19 +50,19 @@ export const itemCatalog: TypesItem[] = [
     link: "/catalog/ginecology",
   },
   {
-    name: "Шприцы и иглы",// без страницы
+    name: "Шприцы и иглы",
     link: "/catalog/syringeAndNeedls",
   },
   {
-    name: "Массаж простаты",// без страницы
+    name: "Массаж простаты",
     link: "/catalog/massagaOfProstat",
   },
   {
-    name: "Товар для взрослых",// без страницы
+    name: "Товар для взрослых",
     link: "/catalog/forAdults",
   },
   {
-    name: "Синус-катетор ямик",// без страницы
+    name: "Синус-катетор ямик",
     link: "/catalog/sinuСatheterYamick",
   },
   {
@@ -74,11 +74,11 @@ export const itemCatalog: TypesItem[] = [
     link: "/catalog/exrpessTests",
   },
   {
-    name: "Эндоброхианальные и эндотрахеальные трубки",// без страницы
+    name: "Эндоброхианальные и эндотрахеальные трубки",
     link: "/catalog/tubes",
   },
   {
-    name: "Фототерапия",// без страницы
+    name: "Фототерапия",
     link: "/catalog/photoTherapy",
   },
   {
@@ -86,23 +86,23 @@ export const itemCatalog: TypesItem[] = [
     link: "/catalog/medicalGloves",
   },
   {
-    name: "Дезинфекция",// без страницы
+    name: "Дезинфекция",
     link: "/catalog/disinfection ",
   },
   {
-    name: "Офтольмалогия",// без страницы
+    name: "Офтольмалогия",
     link: "/catalog/oftalmology ",
   },
   {
-    name: "Ортопедия",// без страницы
+    name: "Ортопедия",
     link: "/catalog/orthopedics",
   },
   {
-    name: "Аппликаторы и массажные коврики",// без страницы
+    name: "Аппликаторы и массажные коврики",
     link: "/catalog/matsAndAplicators ",
   },
   {
-    name: "Расспродажа",// без страницы
+    name: "Расспродажа",
     link: "/catalog/sales ",
   },
 ];
