@@ -27,7 +27,7 @@ const Card: FC<iProduct> = ({
   };
   const dispatch = useAppDispatch();
   return (
-    <div className="w-[300px] max-h-[450px] flex flex-col justify-between border-style hover:bg-[#80808038]">
+    <div className="max-w-[300px] max-h-[450px] flex flex-col justify-between border-style hover:bg-[#80808038]">
       <Link href={`/catalog/${category}/${id}`}>
         <div className="flex flex-col">
           <Image

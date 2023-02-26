@@ -12,8 +12,14 @@
   .folder-container-style {
     @apply text-[#fff] relative h-[270px] overflow-hidden flex items-end p-9 justify-between cursor-pointer transition-transform border-[#4b29294b] border rounded-[40px] bg-cover bg-no-repeat before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:bg-overlay;
   }
+  .folder-title {
+    @apply text-3xl group-hover:-translate-y-8 group-hover:scale-110 group-hover:font-semibold transition-transform z-30 
+  }
   .folder-quantity {
     @apply underline opacity-0 group-hover:opacity-100 z-40;
+  }
+  .folder-li-style{
+    @apply before:content-['\2609'] before:pr-1
   }
   .border-style {
     @apply border border-solid rounded-sm border-[#8080807f];

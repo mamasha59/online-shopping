@@ -1,9 +1,9 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import { FC } from "react";
-import { Open_Sans } from "@next/font/google";
+import { Comfortaa } from "@next/font/google";
 
-const inter = Open_Sans({ subsets: ["cyrillic"] });
+const inter = Comfortaa({ subsets: ["cyrillic"]});
 type LayoutProps = {
   children: React.ReactNode;
 };

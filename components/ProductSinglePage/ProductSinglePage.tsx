@@ -1,24 +1,68 @@
 import { iSingleData } from "@/Types/common-types";
 import Image from "next/image";
+import Link from "next/link";
 import React, { FC } from "react";
+import { IoReturnUpBack } from "react-icons/io5";
+import ReactStars from "react-rating-stars-component";
 
-const ProductSinglePage:FC<iSingleData> = ({data}) => {
+const ProductSinglePage: FC<iSingleData> = ({ data }) => {
+  const { altDescription, brend, img, price, title, category } = data;
 
-  const {altDescription, brend, img, price, title } = data;
+  return (
+    <div className="flex justify-evenly w-full shadow-xl bg-[#8080802c] py-10 relative">
+      <Link href={`/catalog/${category}`}>
+        <button className="absolute -top-10 right-0 pt-2 flex bg-[pink] px-2 py-1 text-[#800015] rounded-t-xl rounded-bl-xl hover:bg-pink transition-all">
+          <IoReturnUpBack className="mr-1 pt-1 text-lg" />
+          Назад
+        </button>
+      </Link>
 
-  return <div className="flex justify-evenly w-full shadow-lg bg-[#8080802c] py-10">
-           <div className="shadow-md h-fit sticky top-[100px]">
-            <Image alt={altDescription} src={img} width={400} height={400}/>
-           </div>
-           <div>
-            <div className="flex flex-col">
-                <h2 className="flex text-2xl font-semibold">{title}</h2>
-                <p className="text-[blue] text-lg">{brend}</p>
-                <p className="text-3xl">{price}</p>
+      <figure className="h-fit sticky top-[100px] rounded-sm cursor-pointer">
+        <Image
+          alt={altDescription}
+          src={img}
+          width={400}
+          height={400}
+          about={`фото товара ${title} из категории ${category}`}
+        />
+        <figcaption className="text-green italic">в наличии</figcaption>
+      </figure>
+      <div>
+        <div className="flex flex-col">
+          <div className="border-b border-[#8080807f] mb-5">
+            <p className="text-[blue] text-sm">{brend}</p>
+            <h2 className="flex text-2xl font-semibold mb-2">{title}</h2>
+            <div>
+              <ReactStars
+                count={5}
+                isHalf={true}
+                size={30}
+                activeColor="#ffd700"
+              />
             </div>
-           </div>
-        </div>
+          </div>
 
+          <p className="text-3xl mb-4 text-[#791d1d]">
+            <span className="lowercase text-base mr-2">Цена:</span>
+            {new Intl.NumberFormat("ru-RU", {
+              style: "currency",
+              currency: "RUB",
+              currencyDisplay: "symbol",
+            }).format(price)}
+          </p>
+          <details className="cursor-pointer">
+            <p className="text-green">Артикул 2874678</p>
+          </details>
+        </div>
+        <div className="max-w-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+          repellat earum et qui adipisci. Illo aliquid voluptatum minima
+          officia, error eius culpa facilis, iste quidem consequatur nesciunt
+          ipsum mollitia esse.
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProductSinglePage;

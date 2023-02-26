@@ -10,23 +10,23 @@ const LargeFolder: FC = () => {
         backgroundImage: `url("https://img.freepik.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg?w=2000")`,
       }}
     >
-      <p className="text-3xl group-hover:-translate-y-8 group-hover:scale-110 group-hover:font-semibold transition-transform z-30">
+      <p className="folder-title">
         Лечение ран
       </p>
       {/*список статично подгружать данные */}
       <ul className="flex absolute left-2/4 top-8 text-xs px-[0.5] flex-wrap gap-2 max-w-[282px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <li>Мазевые</li>
-        <li>Впитывающие</li>
-        <li>Послеоперационные</li>
-        <li>Специальные</li>
-        <li>Для катеторов</li>
-        <li>Гидроколлоидные</li>
-        <li>Крема, Гели, Растворы</li>
-        <li>На логоть, пятку</li>
-        <li>Пленочные</li>
-        <li>Гелеевые</li>
-        <li>Гемостатические</li>
-        <li>Тампоны и тампонады</li>
+        <li className="folder-li-style">Мазевые</li>
+        <li className="folder-li-style">Впитывающие</li>
+        <li className="folder-li-style">Послеоперационные</li>
+        <li className="folder-li-style">Специальные</li>
+        <li className="folder-li-style">Для катеторов</li>
+        <li className="folder-li-style">Гидроколлоидные</li>
+        <li className="folder-li-style">Крема, Гели, Растворы</li>
+        <li className="folder-li-style">На логоть, пятку</li>
+        <li className="folder-li-style">Пленочные</li>
+        <li className="folder-li-style">Гелеевые</li>
+        <li className="folder-li-style">Гемостатические</li>
+        <li className="folder-li-style">Тампоны и тампонады</li>
       </ul>
       {/*список статично подгружать количество каждой категории */}
       <span className="folder-quantity">331товара</span>

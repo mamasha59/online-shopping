@@ -9,12 +9,13 @@ npm run dev запустить режим разработчика
 - TypeScript  
 - TailWind Css / Tailwind ScrollBar 
 - ReactSlick слайдер 
-- react-intersection-observer
+- react-intersection-observer  
+- gsap
 
 
 ## ToDo:  
 
 - [ ] адаптировать блок Folders  
-- [ ] изменить блок поиск - при скроле вниз пропадает,вверх появляется
+- [x] изменить блок поиск - при скроле вниз пропадает,вверх появляется
 - [ ] добавить/сделать Api  
-- [ ] подгружать данные по категориям по url(/catalog)
+- [x] подгружать данные по категориям по url(/catalog)

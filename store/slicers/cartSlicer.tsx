@@ -5,11 +5,12 @@ import { RootState } from "../store";
 interface iInitialState {
   items: iCartItem[];
   totalPrice: number;
+  titleOfCategory:string;
 }
 const initialState: iInitialState = {
-  // первоначальное состояние карзины это пустой массив
   totalPrice: 0, // общая цена
   items: [], // массив всех товаров в корзине
+  titleOfCategory: '',
 };
 
 const cartAddProductSlice = createSlice({
@@ -43,6 +44,9 @@ const cartAddProductSlice = createSlice({
       );
       if (current) current.quantity--;
     },
+    setTitleofCategory: (state, action:PayloadAction<string>) => {
+      state.titleOfCategory = action.payload
+    }
   },
 });
 
@@ -51,6 +55,7 @@ export const {
   removeProductFromCart,
   addOneMore,
   deleteOne,
+  setTitleofCategory
 } = cartAddProductSlice.actions; // импортируем экшены
 
 export const selectItems = (state: RootState) => state.cart; // получить данные стора

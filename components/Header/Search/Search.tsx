@@ -28,14 +28,14 @@ const Search: FC = () => {
 
   return (
     <div ref={ref} className='h-[90px] my-3'>
-      <div className={`flex px-2 py-4 max-h-[100px] transition-opacity ${!inView && 'fixed top-0 left-0 right-0 z-20 shadow-sm bg-cyan-100'}`}>
+      <div className={`flex px-2 py-4 max-h-[100px] transition-opacity ${!inView && 'fixed top-0 left-0 right-0 z-20 shadow-sm bg-cyan-100 max-w-[1800px] my-0 mx-auto bg-[#80808053] backdrop-blur rounded-sm'}`}>
         <div
           ref={popupBlock}
           className="relative grow max-w-[280px] shrink-0 z-10 hover:shadow-md transition-all lg:text-[12px]"
         >
           <button
             onClick={() => setOpen(!open)}
-            className={`flex items-center text-[#fff] bg-green pl-8 pr-4 py-4 uppercase rounded-l-md w-full h-full transition-all duration-700  ${
+            className={`text-sm flex items-center text-[#fff] bg-green pl-8 pr-4 py-4 uppercase rounded-l-md w-full h-full transition-all duration-700  ${
               open && "rounded-b-none"
             }`}
           >
