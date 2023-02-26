@@ -4,18 +4,13 @@ export interface TypesItem {
     icon?:any; // todo - find a type
   }
 
-interface iT{
-  id: number;
-  [key: string]: string | number
-}  
-
 export interface iProduct{
   img:string,
   title:string,
   brend:string,
   price:number,
   altDescription:string,
-  id:iT,
+  id:string,
   category?:string,
 }
 
