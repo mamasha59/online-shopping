@@ -9,6 +9,7 @@ type LayoutProps = {
 };
 
 const Layout: FC<LayoutProps> = ({ children }) => {
+    // компонент общей обертки - футер и хедер
   return (
     <div className={inter.className}>
       <Header/>

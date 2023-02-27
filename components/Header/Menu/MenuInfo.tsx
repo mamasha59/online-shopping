@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 
 import { IoCallSharp } from "react-icons/io5";
-import Cart from "./Cart";
+import CartButton from "../../Buttons/CartButton";
 
 const MenuInfo:FC = () => {
   return (
@@ -45,7 +45,7 @@ const MenuInfo:FC = () => {
             Доставляем ежедневно <b>с 9:00 до 22:00</b>
           </p>
         </div>
-      <Cart/>
+      <CartButton title="Корзина"/>
       </div>
     </div>
   );

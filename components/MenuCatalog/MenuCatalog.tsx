@@ -7,7 +7,7 @@ import { itemCatalog } from "./menu-catalog-items/menu-catalog-items";
 import gsap from "gsap";
 
 const MenuCatalog: FC<any> = ({open}) => {
-
+ // компонент блока категорий слева
   const route = useRouter(); // определение адресса
   const dispatch = useAppDispatch();
 
@@ -32,11 +32,12 @@ const MenuCatalog: FC<any> = ({open}) => {
 
   return (
     <aside ref={menu}>
-      <div className="overflow-y-auto flex flex-col gap-y-2 text-green uppercase scroll-bar-styles w-[280px] h-[100vh]">
+      <div className="overflow-y-auto flex flex-col gap-y-2 text-green uppercase scroll-bar-styles w-[280px] h-[100vh] md:w-48 md:text-xs sl:w-40 sl:text-[10px]">
         {itemCatalog.map((i) => (
           <Link
             key={`/catalog/${i.link}`}
             href={i.link}
+            scroll={false}
             onClick={() => dispatch(setTitleofCategory(i.name))}
           >
             <p

@@ -11,25 +11,28 @@ const CatalogLayot: FC<LayoutProps> = ({ children }) => {
   const title = useAppSelector((state) => state.cart.titleOfCategory);
 
   const [open, setOpen] = useState(false);
+  // компонент общей обертки - каталога
 
   const handleMenuClicked = () =>{
     setOpen(!open)
   }
 
   return (
-    <main className="body-center relative flex flex-col py-6 bg-gradient-catalog overflow-hidden">
+    <main className="body-center relative flex flex-col py-6 overflow-hidden">
       <div className="flex w-full items-end">
-        <h2 className="flex text-4xl capitalize mr-1">{title}</h2>
+        <h2 className="flex text-4xl capitalize mr-1 md:text-lg md:font-bold">{title}</h2>
+        {/* кнопка скрытия меню категорий */}
         <button onClick={handleMenuClicked} className="flex items-center text-[#800015]">
-          <IoReturnUpBack className="mr-1 text-lg" />
+          <IoReturnUpBack className="mr-1 text-lg"/>
           {!open ? "Скрыть категории" : "Показать категории"}
         </button>
+         {/* . */}
       </div>
 
       <section className="flex mt-2">
         <MenuCatalog open={open} />
-        <div className={`flex flex-col w-full relative px-3 ${open}`}>
-          <div className="w-full">{children}</div>
+        <div className="flex flex-col w-full relative px-3">
+          {children}
         </div>
       </section>
     </main>

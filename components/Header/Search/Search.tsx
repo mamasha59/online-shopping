@@ -4,21 +4,22 @@ import { CgDetailsMore } from "react-icons/cg";
 import { BiSearchAlt } from "react-icons/bi";
 
 import { useInView } from "react-intersection-observer";
-import Cart from "../Menu/Cart";
 import { itemCatalog } from "@/components/MenuCatalog/menu-catalog-items/menu-catalog-items";
 import Link from "next/link";
+import CartButton from "../../Buttons/CartButton";
+import { useRouter } from "next/router";
 
 const Search: FC = () => {
   const [open, setOpen] = useState<boolean | null>(false);
   const popupBlock = useRef<HTMLDivElement>(null);
-
+  const router = useRouter(); 
   const { ref, inView } = useInView({
     threshold: 1,
     delay: 100,
   });
 
   useEffect(() => {
-    // закрытие попапа по клике снаружи
+    // закрытие попапа по клику снаружи
     const closePopup = (e: Event) => {
       if (!popupBlock.current?.contains(e.target as Element)) setOpen(false);
     };
@@ -28,18 +29,13 @@ const Search: FC = () => {
 
   return (
     <div ref={ref} className='h-[90px] my-3'>
-      <div className={`flex px-2 py-4 max-h-[100px] transition-opacity ${!inView && 'fixed top-0 left-0 right-0 z-20 shadow-sm bg-cyan-100 max-w-[1800px] my-0 mx-auto bg-[#80808053] backdrop-blur rounded-sm'}`}>
+      <div className={`flex px-2 py-4 transition-opacity ${!inView && router.pathname !== '/cart' && 'fixed top-0 left-0 right-0 z-20 shadow-sm bg-cyan-100 max-w-[1800px] my-0 mx-auto bg-[#80808053] backdrop-blur rounded-sm'}`}>
         <div
           ref={popupBlock}
-          className="relative grow max-w-[280px] shrink-0 z-10 hover:shadow-md transition-all lg:text-[12px]"
+          className="relative grow max-w-[280px] sl:max-w-[200px] shrink-0 z-10 hover:shadow-md transition-all lg:text-[12px]"
         >
-          <button
-            onClick={() => setOpen(!open)}
-            className={`text-sm flex items-center text-[#fff] bg-green pl-8 pr-4 py-4 uppercase rounded-l-md w-full h-full transition-all duration-700  ${
-              open && "rounded-b-none"
-            }`}
-          >
-            Каталог продукции <CgDetailsMore className="ml-6 text-2xl" />
+          <button onClick={() => setOpen(!open)} className={`text-sm flex items-center text-[#fff] bg-green pl-8 pr-4 py-4 uppercase rounded-l-md w-full h-full transition-all duration-700 sl:p-2 sl:text-xs ${open && "rounded-b-none"}`}>
+            Каталог <span className="sl:hidden block ml-1">продукции</span> <CgDetailsMore className="ml-6 text-2xl sl:ml-3" />
           </button>
           {/* попап с категориями */}
           <div
@@ -75,11 +71,11 @@ const Search: FC = () => {
       <div
         className={` ${
           !inView
-            ? "block transition-all fixed right-5 shadow-md rounded-md animate-bounce bg-[pink] text-xl z-50"
+            ? "transition-all fixed right-5 animate-bounce z-50"
             : "hidden"
         }`}
       >
-        <Cart />
+        <CartButton/>
       </div>
     </div>
   );

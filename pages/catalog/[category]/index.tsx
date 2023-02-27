@@ -3,7 +3,6 @@ import CatalogLayot from "@/Layout/CatalogLayot";
 import { iProduct } from "@/Types/common-types";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { IoReturnUpBack } from "react-icons/io5";
 
 interface iData {
   data: iProduct[];
@@ -20,8 +19,8 @@ const CatalogPage: FC<iData> = ({ data }) => {
   return (
     <CatalogLayot>
       <div className="flex flex-col">
-        <div className="my-2">та полоска</div>
-        <div className="flex gap-[35px] flex-wrap">
+        <div className="my-2">блок тулкит</div>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(320px,auto))] justify-center gap-6">
           {sortedData.length !== 0
             ? sortedData.map((i: any) => (
                 <Card

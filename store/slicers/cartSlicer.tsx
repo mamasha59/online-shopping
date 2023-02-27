@@ -7,6 +7,7 @@ interface iInitialState {
   totalPrice: number;
   titleOfCategory:string;
 }
+
 const initialState: iInitialState = {
   totalPrice: 0, // общая цена
   items: [], // массив всех товаров в корзине
@@ -36,13 +37,14 @@ const cartAddProductSlice = createSlice({
       const current = state.items.find(
         (obj) => obj.product.id === action.payload.id
       );
-      if (current) current.quantity++;
+      if (current) current.quantity++
+
     },
     deleteOne: (state, action: PayloadAction<{ id: string }>) => {
       const current = state.items.find(
         (obj) => obj.product.id === action.payload.id
       );
-      if (current) current.quantity--;
+      if (current) current.quantity--
     },
     setTitleofCategory: (state, action:PayloadAction<string>) => {
       state.titleOfCategory = action.payload
