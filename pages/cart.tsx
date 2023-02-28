@@ -26,11 +26,11 @@ export default function Cart(): ReactNode {
             </h4>
             <p>Цена</p>
           </div>
-          {cards.items.map((item) => (
+          {cards.items.length > 0 ? cards.items.map((item) => (
             <CartItem item={item} key={item.product.id} />
-          ))}
+          )) : <div className="mb-2 text-dark italic border-b w-fit">Для покупок, добавьте продукт в корзину!</div> }
           <div className="flex justify-between">
-            <div className="flex gap-7 flex-wrap midl:justify-end">
+            <div className="flex gap-7 flex-wrap midl:justify-end midl:gap-2">
               <Link
                 href="/catalog"
                 replace
@@ -56,18 +56,23 @@ export default function Cart(): ReactNode {
             )}
           </div>
         </div>
-        <aside className="flex flex-[20%] flex-col justify-between shadow-md p-3 bg-[#fff] rounded grow-0 max-h-[150px] sticky top-[15%] md:relative md:max-w-xs">
-          <p className="text-base font-medium md:mb-3">
-            Итого ({cards.items.length} предмета):{" "}
-            <span className="text-xl font-semibold">&#8381;{totalPrice} </span>
-          </p>
-          <button disabled={cards.items.length === 0}
-            className="px-2 py-1 bg-green rounded-sm text-[#fff] hover:scale-105 hover:shadow-md transition-all
+        {cards.items.length > 0 && (
+          <aside className="flex flex-[20%] flex-col justify-between shadow-md p-3 bg-[#fff] rounded grow-0 max-h-[150px] sticky top-[15%] md:relative md:max-w-xs">
+            <p className="text-base font-medium md:mb-3">
+              Итого ({cards.items.length} предмета):{" "}
+              <span className="text-xl font-semibold">
+                &#8381;{totalPrice}{" "}
+              </span>
+            </p>
+            <button
+              disabled={cards.items.length === 0}
+              className="px-2 py-1 bg-green rounded-sm text-[#fff] hover:scale-105 hover:shadow-md transition-all
                bg-gradient-to-r from-green hover:from-[green] hover:animate-pulse"
-          >
-            Оформить заказ
-          </button>
-        </aside>
+            >
+              Оформить заказ
+            </button>
+          </aside>
+        )}
       </div>
     </section>
   );
