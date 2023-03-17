@@ -1,23 +1,14 @@
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { item } from "./menu-data";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useRef } from "react";
 import Link from "next/link";
+import useClosePopupOut from "@/hooks/closePopupOut";
 
 const Menu: FC = () => {
-  const [open, setOpen] = useState(false);
   const popup = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    //закрывать попап по клику вне
-    const handleClickOut = (event: any): void => {
-      if (popup.current) {
-        !popup.current.contains(event.target) && setOpen(false);
-      }
-    };
-    document.body.addEventListener("mousedown", handleClickOut);
-    return () => document.body.removeEventListener("click", handleClickOut);
-  }, []);
+  const [open, setOpen ] = useClosePopupOut({popup});
 
   return (
     <nav className="overflow-hidden text-sm flex justify-between border-b p-2 border-[#e8e8e8] items-center flex-wrap lg:justify-center md:justify-between">

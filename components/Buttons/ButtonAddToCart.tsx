@@ -6,7 +6,7 @@ import { TiPlus } from "react-icons/ti";
 const ButtonAddToCart = ({ card }) => {
   const dispatch = useAppDispatch();
   return (
-    <button
+    <button title="Добавить в корзину"
       className="px-2 py-2 pr-3 flex items-center bg-[#00800060] rounded-md hover:text-[#fff] hover:bg-[green] group transition-all"
       onClick={() => dispatch(addProductIntoCart(card))}
     >

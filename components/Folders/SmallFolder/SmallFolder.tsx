@@ -1,32 +1,35 @@
+import { useAppDispatch } from "@/store/hooks/hooks";
+import { setTitleofCategory } from "@/store/slicers/cartSlicer";
 import Link from "next/link";
 import { FC } from "react";
 
-const SmallFolder: FC = () => {
+interface iFolder {
+  name: string;
+  linkTo: string;
+}
+
+const SmallFolder: FC<iFolder> = ({ name, linkTo }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <Link
-      href="/catalog"
-      className="folder-container-style group grow-0 shrink flex-[278px]"
+      title={name}
+      aria-label={name}
+      href={`/catalog/${linkTo}`}
+      onClick={() => dispatch(setTitleofCategory(name))}
+      className="text-[#ffffff] relative h-[150px] overflow-hidden flex items-end p-5 justify-between cursor-pointer transition-transform border-[#4b29294b] border rounded-[40px]
+      bg-cover bg-no-repeat bg-center bg-fixed before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:bg-overlay group"
       style={{
         backgroundImage: `url("https://img.freepik.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg?w=2000")`,
       }}
     >
-      <p className="folder-title">Хирургия</p>
-      {/*список статично подгружать данные */}
-      <ul className="flex absolute left-2 top-8 text-xs px-[0.5] flex-wrap gap-2 max-w-[260px] z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <li className="folder-li-style">Гидроколлоидные</li>
-        <li className="folder-li-style">Крема, Гели, Растворы</li>
-        <li className="folder-li-style">На логоть, пятку</li>
-        <li className="folder-li-style">Пленочные</li>
-        <li className="folder-li-style">Гелеевые</li>
-        <li className="folder-li-style">Гемостатические</li>
-        <li className="folder-li-style">Тампоны и тампонады</li>
-      </ul>
-      {/*список статично подгружать количество каждой категории */}
-      <span className="folder-quantity absolute right-2">331товара</span>
-      <figcaption
-        className="absolute left-0 bottom-0 flex items-end justify-center pb-5 bg-[#16406a6b] h-[40%] w-full translate-y-full
-                             group-hover:translate-y-0 transition-transform"
-      ></figcaption>
+      <p className="text-xl group-hover:-translate-y-2 group-hover:scale-110 group-hover:font-semibold transition-transform z-30 underline">
+        {name}
+      </p>
+      <span
+        className="absolute left-0 bottom-0 flex items-end justify-center pb-5 bg-[#0a1d306b] h-[100%] w-full translate-y-full
+                  group-hover:translate-y-0 transition-transform"
+      ></span>
     </Link>
   );
 };

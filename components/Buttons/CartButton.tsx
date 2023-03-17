@@ -12,6 +12,8 @@ const CartButton: FC<iButton> = ({title}) => {
 
   return (
     <Link
+      title="Перейти в корзину"
+      aria-label="Перейти в корзину"
       href="/cart"
       scroll={false}
       className={`flex px-2 items-center rounded-md text-pink hover:bg-pink hover:text-[#fff] transition-all duration-500 hover:shadow-lg hover:scale-110

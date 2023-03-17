@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import Logo from "../Logo/Logo";
 import {
   itemsByRole,
   itemsByType,
@@ -13,23 +13,14 @@ const Footer:FC = () => {
     <footer className="bg-[#f0f0f0] text-green">
       <div className="flex body-center justify-between py-7 flex-wrap sl:gap-3">
         <ul className="text-[#000] mr-1 sl:mb-10 flex flex-col items-start">
-          <Link className="flex flex-col mb-4" href={"/"}>
-            <Image
-              src={"https://sterilno.com/template/sterilno/images/logo.svg"}
-              alt="Логотип Sterilno.com"
-              width={200}
-              height={60}
-              priority
-            />
-            <h3 className="text-[13px] pr-4 text-pink mt-2">
-              Уникальные медицинские технологии
-            </h3>
-          </Link>
-          {phoneNumbers.map((i) => 
-              <li key={i.place}>
-                <span className="font-semibold">{i.phoneNumber}</span> {i.place}
-              </li>
-          )}
+          <Logo/>
+          <div className="mt-4">
+            {phoneNumbers.map((i) => 
+                <li key={i.place}>
+                  <span className="font-semibold">{i.phoneNumber}</span> {i.place}
+                </li>
+            )}
+          </div>
           <div className="mt-4 hover:shadow-md hover:shadow-green rounded-md px-3 py-1 hover:scale-110 transition-all">
             <a className="text-green" href="mailto:info@sterilno.com">info@sterilno.com</a>
           </div>

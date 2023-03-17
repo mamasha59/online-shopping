@@ -11,7 +11,9 @@ export interface iProduct{
   price:number,
   altDescription:string,
   id:string,
-  category?:string,
+  category:string,
+  article:string,
+  categoryRU: string,
 }
 
 export interface iCartItem{
@@ -22,3 +24,5 @@ export interface iCartItem{
 export interface iSingleData{
     data: iProduct,
 }
+
+export interface iSearch extends Pick<iProduct, "title" | "article" | "id">{}

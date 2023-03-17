@@ -3,6 +3,7 @@ import { useAppSelector } from "@/store/hooks/hooks";
 import CartItem from "@/components/CartItem/CartItem";
 import { FaCartPlus } from "react-icons/fa";
 import Link from "next/link";
+import GoToCatalog from "@/components/Buttons/GoToCatalog";
 
 export default function Cart(): ReactNode {
   // компонент корзины по URL(/cart)
@@ -31,13 +32,7 @@ export default function Cart(): ReactNode {
           )) : <div className="mb-2 text-dark italic border-b w-fit">Для покупок, добавьте продукт в корзину!</div> }
           <div className="flex justify-between">
             <div className="flex gap-7 flex-wrap midl:justify-end midl:gap-2">
-              <Link
-                href="/catalog"
-                replace
-                className="px-2 py-1 bg-[pink] rounded-sm hover:scale-105 hover:shadow-md transition-all"
-              >
-                Перейти в каталог
-              </Link>
+              <GoToCatalog/>
               <div className="border-r border-[#8080807b] md:hidden"></div>
               <button
                 className="px-2 py-1 bg-green rounded-sm text-[#fff] hover:scale-105 hover:shadow-md transition-all

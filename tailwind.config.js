@@ -11,7 +11,7 @@ module.exports = {
       'green-fonts': '#369776',
       'pink':'#ff5c8e',
       'dark':'#817f7d',
-      'overlay':'rgba(0, 0, 0, 0.3)'
+      'overlay':'rgba(0, 0, 0, 0.4)'
     },
     screens: {
       'lg': {'max': '1170px'},

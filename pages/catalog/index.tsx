@@ -2,11 +2,12 @@ import CatalogLayot from "@/Layout/CatalogLayot";
 import { FC, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import CallOrderButton from "@/components/Buttons/CallOrderButton";
 
 const Catalog: FC = () => {
   const root = useRef<HTMLDivElement>(null);
   const comp = useRef<HTMLParagraphElement>(null);
-  const firstBlock = useRef<HTMLDivElement>(null); // левый блок к категориям
+  const firstBlock = useRef<HTMLDivElement>(null); // левый блок с подсказкой
   const secondBlock = useRef<HTMLDivElement>(null); // правый блок с подсказкой поиску
 
   useLayoutEffect(() => {
@@ -58,7 +59,7 @@ const Catalog: FC = () => {
           </div>
         </div>
         <div>
-          <button>Заказать звонок</button>
+          <CallOrderButton title="Заказать обратный звонок"/>
         </div>
       </div>
     </CatalogLayot>

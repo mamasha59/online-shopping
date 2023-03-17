@@ -3,106 +3,106 @@ import { TypesItem } from "@/Types/common-types";
 export const itemCatalog: TypesItem[] = [
   {
     name: "Лечение ран",
-    link: "/catalog/woundRecovery",
+    link: "woundRecovery",
   },
   {
     name: "Бинты и пластыри",
-    link: "/catalog/bandageAndPatch",
+    link: "bandageAndPatch",
   },
   {
     name: "Хирургия",
-    link: "/catalog/surgery",
+    link: "surgery",
   },
   {
     name: "Инфузионные помпы, порт-системы и иглы",
-    link: "/catalog/pompsAndNeedls",
+    link: "pompsAndNeedls",
   },
   {
     name: "Спирометры и дыхательные тренажеры",
-    link: "/catalog/spirometerAndBreathGym",
+    link: "spirometerAndBreathGym",
   },
   {
     name: "Трахеостома",
-    link: "/catalog/tracheostomy",
+    link: "tracheostomy",
   },
   {
     name: "Голосообразующие аппараты",
-    link: "/catalog/voiceApparats",
+    link: "voiceApparats",
   },
   {
     name: "Гастростома",
-    link: "/catalog/gastrostome",
+    link: "gastrostome",
   },
   {
     name: "Энтеральное питание",
-    link: "/catalog/enteralFood",
+    link: "enteralFood",
   },
   {
     name: "Уход за стомой",
-    link: "/catalog/careForFtoma",
+    link: "careForFtoma",
   },
   {
     name: "Урология",
-    link: "/catalog/urology",
+    link: "urology",
   },
   {
     name: "Гинекология",
-    link: "/catalog/ginecology",
+    link: "ginecology",
   },
   {
     name: "Шприцы и иглы",
-    link: "/catalog/syringeAndNeedls",
+    link: "syringeAndNeedls",
   },
   {
     name: "Массаж простаты",
-    link: "/catalog/massagaOfProstat",
+    link: "massagaOfProstat",
   },
   {
     name: "Товар для взрослых",
-    link: "/catalog/forAdults",
+    link: "forAdults",
   },
   {
     name: "Синус-катетор ямик",
-    link: "/catalog/sinuСatheterYamick",
+    link: "sinuСatheterYamick",
   },
   {
     name: "Уход за лежачими больными",
-    link: "/catalog/careForLaidUp",
+    link: "careForLaidUp",
   },
   {
     name: "Экспресс тесты",
-    link: "/catalog/exrpessTests",
+    link: "exrpessTests",
   },
   {
     name: "Эндоброхианальные и эндотрахеальные трубки",
-    link: "/catalog/tubes",
+    link: "tubes",
   },
   {
     name: "Фототерапия",
-    link: "/catalog/photoTherapy",
+    link: "photoTherapy",
   },
   {
     name: "Медицинские перчатки",
-    link: "/catalog/medicalGloves",
+    link: "medicalGloves",
   },
   {
     name: "Дезинфекция",
-    link: "/catalog/disinfection ",
+    link: "disinfection ",
   },
   {
     name: "Офтольмалогия",
-    link: "/catalog/oftalmology ",
+    link: "oftalmology ",
   },
   {
     name: "Ортопедия",
-    link: "/catalog/orthopedics",
+    link: "orthopedics",
   },
   {
     name: "Аппликаторы и массажные коврики",
-    link: "/catalog/matsAndAplicators ",
+    link: "matsAndAplicators ",
   },
   {
     name: "Расспродажа",
-    link: "/catalog/sales ",
+    link: "sales ",
   },
 ];

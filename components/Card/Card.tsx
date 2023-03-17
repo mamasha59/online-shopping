@@ -24,6 +24,7 @@ const Card: FC<iProduct> = ({
     category: category,
   };
 
+
   return (
     <div className="max-w-[300px] p-2 max-h-[450px] flex flex-col justify-between bg-[#80808038]">
       <Link href={`/catalog/${category}/${id}`}>

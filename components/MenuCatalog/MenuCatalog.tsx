@@ -6,7 +6,11 @@ import { FC, useEffect, useRef } from "react";
 import { itemCatalog } from "./menu-catalog-items/menu-catalog-items";
 import gsap from "gsap";
 
-const MenuCatalog: FC<any> = ({open}) => {
+interface iCatalog{
+open:boolean;
+}
+
+const MenuCatalog: FC<iCatalog> = ({open}) => {
  // компонент блока категорий слева
   const route = useRouter(); // определение адресса
   const dispatch = useAppDispatch();
@@ -35,15 +39,13 @@ const MenuCatalog: FC<any> = ({open}) => {
       <div className="overflow-y-auto flex flex-col gap-y-2 text-green uppercase scroll-bar-styles w-[280px] h-[100vh] md:w-48 md:text-xs sl:w-40 sl:text-[10px]">
         {itemCatalog.map((i) => (
           <Link
-            key={`/catalog/${i.link}`}
-            href={i.link}
+            key={i.link}
+            href={`/catalog/${i.link}`}
             scroll={false}
             onClick={() => dispatch(setTitleofCategory(i.name))}
           >
-            <p
-              className={`border border-[#8080804f] hover:bg-[#8080804f] hover:font-medium p-2 transition-all
-                        ${route.asPath === i.link && "bg-[#8080804f]"}`}
-            >
+            <p className={`border border-[#8080804f] hover:bg-[#8080804f] hover:font-medium p-2 transition-all
+                        ${route.asPath === i.link && "bg-[#8080804f]"}`}>
               {i.name}
             </p>
           </Link>
