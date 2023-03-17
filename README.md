@@ -25,3 +25,8 @@ npm run dev запустить режим разработчика
 
 
 # https://clone-sterilno.vercel.app/
+
+
+Что бы запустить проект:  
+Папке client - npm run dev,
+В основной папке - npm run start
