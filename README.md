@@ -24,7 +24,7 @@ npm run dev запустить режим разработчика
 
 
 
-# https://clone-sterilno.vercel.app/
+# https://online-shopping-main.vercel.app/
 
 
 Что бы запустить проект:  
