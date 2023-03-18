@@ -27,7 +27,7 @@ const SearchForm: FC = () => {
     getAll();
     if (data) {
       const results = data.productsAll.filter((item) => {
-        return item.title.toLowerCase().includes(value);
+        return item.title.toLowerCase().includes(value.toLowerCase());
       });
       setSortedData(results);
     }

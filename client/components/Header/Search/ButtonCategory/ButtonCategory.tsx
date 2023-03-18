@@ -4,6 +4,7 @@ import React, { FC, useRef } from "react";
 import CategoryPopup from "./CategoryPopup";
 
 const ButtonCategory: FC = () => {
+  // компонент кнопки "Каталог продукции и попапа с Категориями"
   const popup = useRef<HTMLDivElement>(null);
   
   const [open, setOpen ] = useClosePopupOut({popup}); // закрытие/открытие
