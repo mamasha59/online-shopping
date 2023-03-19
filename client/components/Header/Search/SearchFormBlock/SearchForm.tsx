@@ -43,16 +43,19 @@ const SearchForm: FC = () => {
       onSubmit={(e) => e.preventDefault()}
       className="relative border-[9px] rounded-r-md pl-3 pr-9 py-2 ml-[-2px] w-full grow-0 shrink bg-[#fff] border-[pink]">
       <input
+        title="Поиск товара"
+        aria-label="Поиск товара"
         value={input}
         onChange={(e) => handleChange(e.target.value)}
         className="text-[#000] italic w-full outline-none"
         type="search"
         placeholder="Для поиска доступно:2222 товаров / Введите запрос."
       />
-      <button className="absolute right-2 top-[20%] hover:scale-110 transition-all">
+      <button title="Кнопка поиска" aria-label="Кнопка что бы начать поиск" className="absolute right-2 top-[20%] hover:scale-110 transition-all">
         <BiSearchAlt className="text-2xl hover:text-green" />
       </button>
       <div
+        aria-label="Найденные товары по запросу"
         ref={popup}
         className={`${
           input.length > 0 && open ? "opacity-100 block" : "opacity-0 invisible"
@@ -63,6 +66,8 @@ const SearchForm: FC = () => {
 
           ? (sortedData.map((item:iSearch) => 
             <Link
+              title={`Найден ${item.title} по артиклу ${item.article}`}
+              aria-label={`Найден ${item.title} по артиклу ${item.article} кликните что бы перейти на подробное описание товара`}
               onClick={handleClick}
               key={item.title}
               href={`/${item.id}`}
@@ -73,9 +78,7 @@ const SearchForm: FC = () => {
             </Link>
           ))
           : (<div>Ничего не найденно, измените запрос</div>)
-
         }
-      
       </div>
     </form>
   );

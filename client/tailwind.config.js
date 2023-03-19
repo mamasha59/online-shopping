@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     colors:{
-      'green': '#369776',
+      'green': '#008000',
       'green-fonts': '#369776',
       'pink':'#ff5c8e',
       'dark':'#817f7d',

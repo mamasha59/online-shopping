@@ -20,7 +20,7 @@ const ButtonCategory: FC = () => {
             ${open && "rounded-b-none"}`}>
         Каталог <span className="sl:hidden block ml-1">продукции</span>
         {/* стилизация полосок кнопки */}
-        <div className="relative flex justify-center items-center w-5 h-5 ml-2 cursor-pointer transition-all pb-[2px]">
+        <span className="relative flex justify-center items-center w-5 h-5 ml-2 cursor-pointer transition-all pb-[2px]">
           <span className={`w-4 h-[1px] bg-[#fff] rounded-md transition-all ${open && "w-0"}
             before:absolute before:left-[2px] before:w-4 before:h-[1px] before:bg-[#fff] before:-translate-y-1 before:transition-all
           ${open &&"before:rotate-45 before:-translate-y-0"}
@@ -28,7 +28,7 @@ const ButtonCategory: FC = () => {
             after:absolute after:left-[2px] after:w-4 after:h-[1px] after:bg-[#fff] after:translate-y-1 after:transition-all 
             ${open &&"after:-rotate-45 after:translate-y-0"}`}
           ></span>
-        </div>
+        </span>
          {/* ------------------ */}
       </button>
 

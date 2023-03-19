@@ -18,7 +18,7 @@ export const Call: FC = () => {
         </div>
         <div className="text-[#fff]">
           <div className="items-start flex flex-col justify-center shadow-2xl rounded-md px-7 py-4">
-            <h2 className="text-4xl mb-4 md:text-xl italic">
+            <h2 className="text-4xl mb-4 md:text-xl italic cursor-pointer">
               <span className="decoration-wavy border-b">Стерильно.com </span>
               поможет c выбором
             </h2>

@@ -1,7 +1,11 @@
 import { FC } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
+import Slide1 from "../../public/slide1.svg";
+import Slide2 from "../../public/slide2.svg";
+import Slide3 from "../../public/slide3.svg";
 
 const Sliders: FC = () => {
   const settings = {
@@ -14,15 +18,25 @@ const Sliders: FC = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     pauseOnHover: true,
-    arrows:false,
+    arrows: false,
   };
 
   return (
-    <section className="h-[420px] overflow-hidden relative block">
+    <section className="h-[440px] overflow-hidden relative block max-w-[1800px] mx-auto my-0">
       <Slider {...settings}>
-          <div className="h-[400px] bg-green">1</div>
-          <div className="h-[400px] bg-pink">2</div>
-          <div className="h-[400px] bg-[red]">3</div>
+        <div className="h-[400px] bg-green">
+          <Image src={Slide1} width={400} height={100} alt="первый слайд" />
+        </div>
+        <div className="h-[400px] bg-pink">
+          <div className="flex justify-center">
+            <Image src={Slide2} width={400} height={100} alt="второй слайд" />
+          </div>
+        </div>
+        <div className="h-[400px] bg-[red]">
+        <div className="flex justify-end">
+            <Image src={Slide3} width={400} height={100} alt="третий слайд" />
+          </div>
+        </div>
       </Slider>
     </section>
   );
