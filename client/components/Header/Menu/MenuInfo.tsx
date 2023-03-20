@@ -10,7 +10,7 @@ const MenuInfo:FC = () => {
       <Logo/>
       <CallOrderButton title="Заказать звонок"/>
       <div className="sm:text-center">
-        <h2 className="text-[#000c] font-bold text-lg cursor-default">
+        <h2 className="text-[#000c] font-bold text-lg cursor-default my-3">
           <Link href="tel:88003508017" title="Вызвать по номеру" aria-label="Вызвать по номеру 88003508017">8 (800) 350-80-17</Link>
         </h2>
         <p title="Ваш город" aria-label="Ваш город">Ваш город</p>

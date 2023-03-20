@@ -57,8 +57,7 @@ const SearchForm: FC = () => {
         aria-label="Найденные товары по запросу"
         ref={popup}
         className={`${
-          input.length > 0 && open ? "opacity-100 block" : "opacity-0 invisible"
-        } transition-all duration-500 scroll-bar-styles absolute -left-[7px] right-[7px] rounded-b-lg border-l-[9px] border-b-[9px] border-[pink] bottom-0 top-12 flex flex-col max-h-52 h-fit overflow-y-auto gap-3 z-50 w-full bg-[#fff] px-2 py-2`}
+          input.length > 0 && open ? "opacity-100 block" : "opacity-0 invisible"} transition-all duration-500 scroll-bar-styles absolute -left-[7px] right-[7px] rounded-b-lg border-l-[9px] border-b-[9px] border-[pink] bottom-0 top-12 flex flex-col max-h-52 h-fit overflow-y-auto gap-3 z-50 w-full bg-[#fff] px-2 py-2`}
       >
         {loading ? "loading..." : !loading && !error && input && data &&
           sortedData.length > 0 

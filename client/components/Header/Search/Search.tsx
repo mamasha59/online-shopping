@@ -34,8 +34,7 @@ const Search: FC = () => {
 
   return (
     <div className="h-[90px] my-3">
-      <div className={show ? "flex px-2 py-4 transition-transform duration-500 fixed top-0 left-0 right-0 z-20 w-full shadow-sm max-w-[1800px] mx-auto bg-[#80808053] backdrop-blur rounded-sm" 
-               : "flex px-2 py-4 transition-transform duration-500"}>
+      <div className={show ? "flex px-2 py-4 transition-transform duration-500 fixed top-0 left-0 right-0 z-20 w-full shadow-sm max-w-[1800px] mx-auto bg-[#80808053] backdrop-blur rounded-sm" : "flex px-2 py-4 transition-transform duration-500"}>
         <ButtonCategory/>
         <SearchForm/>
       </div>

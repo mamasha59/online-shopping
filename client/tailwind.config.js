@@ -10,7 +10,7 @@ module.exports = {
       'green': '#29755A',
       'green-fonts': '#369776',
       'pink':'#E60071',
-      'dark':'#817f7d',
+      'dark':'#212121',
       'overlay':'rgba(0, 0, 0, 0.4)'
     },
     screens: {

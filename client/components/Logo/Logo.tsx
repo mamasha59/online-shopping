@@ -19,7 +19,7 @@ const Logo: FC = () => {
       <p className="text-green invisible opacity-0 transition-opacity duration-700 z-30 absolute w-[66%] top-0 left-2/4 translate-x-[-40%] translate-y-[-100%] shadow-md bg-[#80808040] rounded-md px-1 text-xs group-hover:visible group-hover:opacity-100">
         Перейти на главную страницу
       </p>
-      <h3 className="text-[13px] pr-4 text-pink">
+      <h3 className="text-[13px] pr-4 text-[#9D2080]">
         Уникальные медицинские технологии
       </h3>
     </Link>
