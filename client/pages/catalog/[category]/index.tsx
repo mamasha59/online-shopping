@@ -2,17 +2,16 @@ import Card from "@/components/Card/Card";
 import CatalogLayot from "@/Layout/CatalogLayot";
 import { iProduct } from "@/Types/common-types";
 import { useRouter } from "next/router";
-import { FC } from "react";
 import { useQuery } from "@apollo/client";
-import ClockLoader from "react-spinners/ClockLoader";
 import {GET_PRODUCTS} from "@/utils/apollo-requestes";
 import Loader from "@/components/Loader/Loader";
+import { NextPage } from "next";
 
 interface iData {
   products: iProduct[];
 }
 
-const CatalogPage: FC<iData> = () => {
+const CatalogPage: NextPage<iData> = () => {
   // компонент рендерит товары по категориям
   const url = useRouter();
   const name = url.query.category?.toString().toLowerCase();
@@ -41,7 +40,6 @@ const CatalogPage: FC<iData> = () => {
                   id={i.id}
                   category={i.category}
                   article={i.article}
-                  categoryRU={i.categoryRU}
                 />
               ))
             : <div className="sl:text-xs flex max-w-[10%]">каталог пустой, либо отсутствуют данные...</div> )

@@ -25,16 +25,16 @@ const Sliders: FC = () => {
     <section className="h-[440px] overflow-hidden relative block max-w-[1800px] mx-auto my-0">
       <Slider {...settings}>
         <div className="h-[400px] bg-green">
-          <Image src={Slide1} width={400} height={100} alt="первый слайд" />
+          <Image priority={true} src={Slide1} width={400} height={100} alt="первый слайд" />
         </div>
         <div className="h-[400px] bg-pink">
           <div className="flex justify-center">
-            <Image src={Slide2} width={400} height={100} alt="второй слайд" />
+            <Image priority={true} src={Slide2} width={400} height={100} alt="второй слайд" />
           </div>
         </div>
         <div className="h-[400px] bg-[red]">
         <div className="flex justify-end">
-            <Image src={Slide3} width={400} height={100} alt="третий слайд" />
+            <Image priority={true} src={Slide3} width={400} height={100} alt="третий слайд" />
           </div>
         </div>
       </Slider>

@@ -13,7 +13,6 @@ export interface iProduct{
   id:string,
   category:string,
   article:string,
-  categoryRU: string,
 }
 
 export interface iCartItem{

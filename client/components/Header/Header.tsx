@@ -6,7 +6,7 @@ import Search from "./Search/Search";
 
 const Header: FC = () => {
   return (
-    <header className="text-green-fonts body-center p-0">
+    <header className="text-[green] body-center p-0">
       <Menu />
       <MenuInfo />
       <Search />

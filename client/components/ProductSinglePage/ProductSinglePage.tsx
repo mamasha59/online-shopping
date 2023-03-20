@@ -1,7 +1,7 @@
 import { iSingleData } from "@/Types/common-types";
 import Image from "next/image";
 import Link from "next/link";
-import React, { FC } from "react";
+import { FC } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
 import ButtonAddToCart from "../Buttons/ButtonAddToCart";

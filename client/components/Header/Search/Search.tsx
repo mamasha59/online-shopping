@@ -4,7 +4,6 @@ import CartButton from "../../Buttons/CartButton";
 import SearchForm from "./SearchFormBlock/SearchForm";
 import ButtonCategory from "./ButtonCategory/ButtonCategory";
 import CallOrderButton from "@/components/Buttons/CallOrderButton";
-import { removeAllListeners } from "process";
 
 const Search: FC = () => {
 
@@ -40,7 +39,7 @@ const Search: FC = () => {
         <ButtonCategory/>
         <SearchForm/>
       </div>
-      <div className={`${scrollData.y > 270 ? "fixed right-5 animate-bounce z-50 flex flex-col items-center gap-1" : "hidden" }`}>
+      <div className={`${scrollData.y > 270 ? "top-1/2 fixed right-5 animate-bounce z-50 flex flex-col items-center gap-1" : "hidden" }`}>
         <CartButton/>
         <CallOrderButton/>
       </div>

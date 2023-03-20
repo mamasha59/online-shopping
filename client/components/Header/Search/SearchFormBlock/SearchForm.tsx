@@ -1,10 +1,9 @@
-import Loader from "@/components/Loader/Loader";
 import useClosePopupOut from "@/hooks/closePopupOut";
 import { iSearch } from "@/Types/common-types";
 import { GET_ALL_PRODUCTS_SEARCH } from "@/utils/apollo-requestes";
 import { useLazyQuery } from "@apollo/client";
 import Link from "next/link";
-import React, { FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
 const SearchForm: FC = () => {

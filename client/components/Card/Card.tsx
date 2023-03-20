@@ -12,16 +12,18 @@ const Card: FC<iProduct> = ({
   altDescription,
   id,
   category,
+  article
 }) => {
   // компонент карточки продукта в категориях по URL(/catalog)
-  const card = {
-    img: img,
-    title: title,
-    brend: brend,
-    price: price,
-    altDescription: altDescription,
-    id: id,
-    category: category,
+  const card:iProduct = {
+    img,
+    title,
+    brend,
+    price,
+    altDescription,
+    id,
+    article,
+    category
   };
 
 

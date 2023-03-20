@@ -8,7 +8,7 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 const CartItem: FC<{item:iCartItem}> = ({item}) => { 
   // компонент продукта в корзине
   const dispatch = useAppDispatch();
-  const {altDescription,brend,id,img,price,title} = item.product;
+  const {altDescription,brend,id,img,price,title,article} = item.product;
 
   return (
       <div className="w-full flex my-7 justify-between bg-[#8080800b] rounded-sm border-b border-[#80808020] md:flex-col midl:py-2">
@@ -17,7 +17,7 @@ const CartItem: FC<{item:iCartItem}> = ({item}) => {
           <div className="ml-3 p-3 flex flex-col">
             <div className="max-w-2xl">
               <h3 className="text-[#0c0909] font-medium text-2xl md:text-lg">{title}</h3>
-              <p className="text-xs lowercase italic">Aртикул 20202</p>
+              <p className="text-xs lowercase italic">Aртикул {article}</p>
               <p className="text-xs lowercase italic">
                 Размер 10 на 20 в упаковке
               </p>

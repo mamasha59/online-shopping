@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
 import { useAppSelector } from "@/store/hooks/hooks";
 import CartItem from "@/components/CartItem/CartItem";
 import { FaCartPlus } from "react-icons/fa";
-import Link from "next/link";
 import GoToCatalog from "@/components/Buttons/GoToCatalog";
+import { NextPage } from "next";
+import Head from "next/head";
 
-export default function Cart(): ReactNode {
+const Cart:NextPage = () => {
   // компонент корзины по URL(/cart)
   const cards = useAppSelector((state) => state.cart);
 
@@ -15,6 +15,10 @@ export default function Cart(): ReactNode {
   ); // общая сумма
 
   return (
+    <>
+    <Head>
+      <meta name="Покупай надежно здесь! Везде врут а тут нет!" content="Интернет магазин медицинских товаров! Лучший в мире!"/>
+    </Head>
     <section className="body-center py-4 my-4 bg-[#8080802c] min-h-[50vh]">
       <div className="flex md:flex-col">
         <div className="flex flex-col grow flex-[80%] shadow-md p-3 bg-[#fff] mr-4 rounded md:mb-3 md:mr-0">
@@ -70,5 +74,8 @@ export default function Cart(): ReactNode {
         )}
       </div>
     </section>
+    </>
   );
 }
+
+export default Cart;

@@ -2,10 +2,10 @@ import Loader from "@/components/Loader/Loader";
 import ProductSinglePage from "@/components/ProductSinglePage/ProductSinglePage";
 import { GET_PRODUCT_BU_ID } from "@/utils/apollo-requestes";
 import { useQuery } from "@apollo/client";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
-import React, { FC } from "react";
 
-const Product: FC = () => {
+const Product: NextPage = () => {
   const router = useRouter();
   const id = router.query.id;
 

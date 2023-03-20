@@ -3,7 +3,8 @@ import Header from "@/components/Header/Header";
 import { FC } from "react";
 import { Comfortaa } from "@next/font/google";
 
-const inter = Comfortaa({ subsets: ["cyrillic"] });
+const inter = Comfortaa({ subsets: ["cyrillic"], style: ["normal"], display: 'swap', fallback: ['system-ui', 'arial'] });
+
 type LayoutProps = {
   children: React.ReactNode;
 };

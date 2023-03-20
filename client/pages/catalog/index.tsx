@@ -1,10 +1,11 @@
 import CatalogLayot from "@/Layout/CatalogLayot";
-import { FC, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import CallOrderButton from "@/components/Buttons/CallOrderButton";
+import { NextPage } from "next";
 
-const Catalog: FC = () => {
+const Catalog: NextPage = () => {
   const root = useRef<HTMLDivElement>(null);
   const comp = useRef<HTMLParagraphElement>(null);
   const firstBlock = useRef<HTMLDivElement>(null); // левый блок с подсказкой

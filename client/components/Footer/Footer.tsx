@@ -34,36 +34,42 @@ const Footer: FC = () => {
             info@sterilno.com
           </a>
         </div>
-        <ul className="flex flex-col items-start mr-1">
-          <p className="mb-4 font-medium text-lg text-[green]">Продукты по назначению</p>
-          {itemsByRole.map((i) => (
-            <Link href={i.link} key={i.link}>
-              <li title={i.name} aria-label={i.name} className="text-sm mb-2 border-b border-[#ff000000] hover:border-green transition-all hover:text-[green]">
-                {i.name}
-              </li>
-            </Link>
-          ))}
-        </ul>
-        <ul className="flex flex-col items-start mr-1">
-          <p className="mb-4 font-medium text-lg text-[green]">Продукция по типу</p>
-          {itemsByType.map((i) => (
-            <Link href={i.link} key={i.link}>
-              <li title={i.name} aria-label={i.name} className="text-sm mb-2 border-b border-[#ff000000] hover:border-green transition-all hover:text-[green]">
-                {i.name}
-              </li>
-            </Link>
-          ))}
-        </ul>
-        <ul className="flex flex-col items-start">
-          <p className="mb-4 font-medium text-lg text-[green]">Сервисы</p>
-          {itemsService.map((i) => (
-            <Link href={i.link} key={i.link}>
-              <li title={i.name} aria-label={i.name} className="text-sm mb-2 border-b border-[#ff000000] hover:border-green transition-all hover:text-[green]">
-                {i.name}
-              </li>
-            </Link>
-          ))}
-        </ul>
+        <div className="flex flex-col items-start mr-1">
+          <h4 className="underline mb-4 font-medium text-lg text-[green]">Продукты по назначению</h4>
+            <ul>
+            {itemsByRole.map((i) => (
+                <li key={i.link} title={i.name} aria-label={i.name} className="text-sm mb-2 border-b border-[#ff000000] hover:border-green transition-all hover:text-[green]">
+                  <Link href={i.link}>
+                    {i.name}
+                  </Link>
+                </li>
+            ))}
+            </ul>
+        </div>
+        <div className="flex flex-col items-start mr-1">
+          <h4 className="underline mb-4 font-medium text-lg text-[green]">Продукция по типу</h4>
+          <ul>
+            {itemsByType.map((i) => (
+                <li key={i.link} title={i.name} aria-label={i.name} className="text-sm mb-2 border-b border-[#ff000000] hover:border-green transition-all hover:text-[green]">
+                  <Link href={i.link}>
+                   {i.name}
+                  </Link>
+                </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex flex-col items-start">
+          <h4 className="underline mb-4 font-medium text-lg text-[green]">Сервисы</h4>
+          <ul>
+            {itemsService.map((i) => (
+                <li key={i.link} title={i.name} aria-label={i.name} className="text-sm mb-2 border-b border-[#ff000000] hover:border-green transition-all hover:text-[green]">
+                  <Link href={i.link}>
+                    {i.name}
+                  </Link>
+                </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </footer>
   );

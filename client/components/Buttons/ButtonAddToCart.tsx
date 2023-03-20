@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from "@/store/hooks/hooks";
+import { useAppDispatch } from "@/store/hooks/hooks";
 import { addProductIntoCart } from "@/store/slicers/cartSlicer";
-import React from "react";
 import { TiPlus } from "react-icons/ti";
 
 const ButtonAddToCart = ({ card }) => {
+
   const dispatch = useAppDispatch();
   return (
     <button title="Добавить в корзину"

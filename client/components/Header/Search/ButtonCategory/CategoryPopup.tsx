@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import { itemCatalog } from "@/components/MenuCatalog/menu-catalog-items/menu-catalog-items";
 
 interface iCategory{

@@ -3,11 +3,11 @@ import CatalogLayot from "@/Layout/CatalogLayot";
 import { iSingleData } from "@/Types/common-types";
 import { GET_PRODUCT_BU_ID } from "@/utils/apollo-requestes";
 import { useQuery } from "@apollo/client";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
-import React, { FC } from "react";
 import  ClockLoader from "react-spinners/ClockLoader";
 
-const CurrenProduct: FC<iSingleData> = () => {
+const CurrenProduct: NextPage<iSingleData> = () => {
   const url = useRouter();
   const id = url.query.id;
 
@@ -23,7 +23,7 @@ const CurrenProduct: FC<iSingleData> = () => {
                     </CatalogLayot>
   //рендер компонента
   return <CatalogLayot>
-            {!loading  && !error  && <ProductSinglePage data={data.product} />} 
+            {!loading  && !error  && <ProductSinglePage data={data.product} />}
         </CatalogLayot>;
 };
 

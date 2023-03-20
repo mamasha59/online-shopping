@@ -1,5 +1,5 @@
 import useClosePopupOut from "@/hooks/closePopupOut";
-import React, { FC, useRef } from "react";
+import { FC, useRef } from "react";
 
 import CategoryPopup from "./CategoryPopup";
 

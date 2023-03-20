@@ -15,7 +15,7 @@ const Menu: FC = () => {
       <ul className="flex gap-8 lg:mb-2 md:hidden">
         {item.map((i) => (
           <li
-            className="cursor-pointer hover:text-[green] transition-all hover:scale-105 hover-header md:hidden"
+            className="cursor-pointer hover:text-[#235D48] transition-all hover:scale-105 hover-header md:hidden"
             key={i.link}
             title={i.name}
             aria-label={i.name}

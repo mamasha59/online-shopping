@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Head>
         <title>Sterilno.com</title>
-        <meta name="Покупай надежно здесь! Везде врут а тут нет!" content="Интернет магазин медицинских товаров! Лучший в мире!" />
+        <meta name="Покупай надежно здесь! Везде врут а тут нет!" content="Интернет магазин медицинских товаров! Лучший в мире!"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/callCenter.svg"/>
       </Head>
