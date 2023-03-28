@@ -2,12 +2,11 @@ import { useAppDispatch } from "@/store/hooks/hooks";
 import { setTitleofCategory } from "@/store/slicers/cartSlicer";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC, useEffect, useRef } from "react";
+import { FC } from "react";
 import { itemCatalog } from "./menu-catalog-items/menu-catalog-items";
-import gsap from "gsap";
 
 interface iCatalog{
-open:boolean;
+  open:boolean;
 }
 
 const MenuCatalog: FC<iCatalog> = ({open}) => {
@@ -15,28 +14,8 @@ const MenuCatalog: FC<iCatalog> = ({open}) => {
   const route = useRouter(); // определение адресса
   const dispatch = useAppDispatch();
 
-  const menu = useRef<HTMLElement>(null);
-  const tl = useRef<GSAPTimeline>();
-
-  useEffect(() => {
-    if(tl){
-      tl.current = gsap.timeline({
-        paused:true
-      })
-      tl.current.to(menu.current, {x:'-100%', opacity:0, visibility: 'hidden', display:'none', duration:0.3})
-    }
-
-  },[]);
-
-  useEffect(() => {
-    if(tl.current){
-      open ? tl.current.play() : tl.current.reverse()
-    }
-  },[open])
-
   return (
-    <aside ref={menu}>
-      <div className="overflow-y-auto flex flex-col gap-y-2 text-green uppercase scroll-bar-styles w-[280px] h-[100vh] md:w-48 md:text-xs sl:w-40 sl:text-[10px]">
+    <aside className={`w-[280px] h-[100vh] overflow-y-auto text-green scroll-bar-styles flex flex-col gap-y-2 uppercase md:text-xs sl:text-[10px] sl:w-40 md:w-48 shrink-0 ${!open ? 'translate-x-0' : 'hidden invisible opacity-0'}`}>
         {itemCatalog.map((i) => (
           <Link
             key={i.link}
@@ -50,7 +29,6 @@ const MenuCatalog: FC<iCatalog> = ({open}) => {
             </p>
           </Link>
         ))}
-      </div>
     </aside>
   );
 };

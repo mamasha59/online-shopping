@@ -3,11 +3,11 @@ import { useAppSelector } from "@/store/hooks/hooks";
 import { FC, useEffect, useState } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
 
-type LayoutProps = {
+type iLayoutProps = {
   children: React.ReactNode;
 };
 
-const CatalogLayot: FC<LayoutProps> = ({ children }) => {
+const CatalogLayot: FC<iLayoutProps> = ({ children }) => {
   // компонент общей обертки - каталога
   const title = useAppSelector((state) => state.cart.titleOfCategory);
 
@@ -16,7 +16,7 @@ const CatalogLayot: FC<LayoutProps> = ({ children }) => {
   useEffect(()=>{ // на дисплеях меньще 540 до дефолту категории будут скрыты
     if(typeof window !== 'undefined'){
       const mediaQuery = window.matchMedia('(max-width: 540px)');
-      mediaQuery.matches && setOpen(true)
+      mediaQuery.matches && setOpen(!open)
     }
   },[])
 

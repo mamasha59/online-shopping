@@ -28,7 +28,7 @@ module.exports = {
       backgroundImage: {
         'gradien-pattern': "linear-gradient(270deg, hsla(261, 52%, 72%, 1) 0%, hsla(250, 57%, 63%, 1) 74%, hsla(250, 45%, 51%, 1) 100%)",
         'gradien-catalog': "linear-gradient(129deg, hsla(0, 0%, 96%, 1) 45%, hsla(325, 100%, 92%, 1) 56%, hsla(0, 0%, 100%, 1) 66%)",
-     },
+     }
     },
   },
   plugins: [

@@ -19,7 +19,6 @@ const SearchForm: FC = () => {
   );
   if (error) return <div>error...</div>;
 
-
   const handleChange = (value: string) => {
     setInput(value);
     setOpen(true);
@@ -32,7 +31,7 @@ const SearchForm: FC = () => {
     }
   };
 
-  const handleClick = (item) => {
+  const handleClick = () => {
     setOpen(false); // закрытие попапа
     setInput(""); // очищение инпута
   }
@@ -48,7 +47,7 @@ const SearchForm: FC = () => {
         onChange={(e) => handleChange(e.target.value)}
         className="text-[#000] italic w-full outline-none"
         type="search"
-        placeholder="Для поиска доступно:2222 товаров / Введите запрос."
+        placeholder="Для поиска доступно: 2222 товаров / Введите запрос."
       />
       <button title="Кнопка поиска" aria-label="Кнопка что бы начать поиск" className="absolute right-2 top-[20%] hover:scale-110 transition-all">
         <BiSearchAlt className="text-2xl hover:text-green" />

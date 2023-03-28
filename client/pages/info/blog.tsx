@@ -1,4 +1,5 @@
+import InfoLayout from "@/Layout/InfoLayout";
 
 export default function Blog() {
-  return <div>B</div>;
+  return <InfoLayout>B</InfoLayout>;
 }

@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import Slide1 from "../../public/slide1.svg";
-import Slide2 from "../../public/slide2.svg";
-import Slide3 from "../../public/slide3.svg";
+import Slide1 from "@/public/slideImg/slide1.svg";
+import Slide2 from "@/public/slideImg/slide2.svg";
+import Slide3 from "@/public/slideImg/slide3.svg";
 
 const Sliders: FC = () => {
   const settings = {

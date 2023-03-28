@@ -6,7 +6,7 @@ import callCenter from "../../public/callCenter.svg";
 
 export const Call: FC = () => {
   return (
-    <section className="body-center bg-gradien-pattern flex my-4">
+    <section className="body-center bg-gradien-pattern flex my-4 relative">
       <div className="flex justify-evenly w-full items-center">
         <div className="md:hidden flex items-center pr-3">
           <Image
