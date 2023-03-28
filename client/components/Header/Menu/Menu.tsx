@@ -36,8 +36,8 @@ const Menu: FC = () => {
         </button>
         {/* внизу попап на маленьких экранах */}
         <ul
-          className={`z-40 flex flex-col items-center p-4 absolute top-14 bg-green  w-full rounded-md left-0 -translate-x-full transition-all duration-500 shadow-md ${
-            open ? "translate-x-0" : ""
+          className={`z-40 flex flex-col items-center p-4 absolute top-14 bg-green w-full rounded-md left-0 transition-all duration-500 shadow-md ${
+            open ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           {item.map((i) => (
