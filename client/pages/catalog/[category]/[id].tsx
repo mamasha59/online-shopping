@@ -5,26 +5,45 @@ import { GET_PRODUCT_BU_ID } from "@/utils/apollo-requestes";
 import { useQuery } from "@apollo/client";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import  ClockLoader from "react-spinners/ClockLoader";
+import ClockLoader from "react-spinners/ClockLoader";
 
 const CurrenProduct: NextPage<iSingleData> = () => {
   const url = useRouter();
   const id = url.query.id;
 
-  const { data, loading, error } = useQuery(GET_PRODUCT_BU_ID, { variables: { id }});
+  const { data, loading, error } = useQuery(GET_PRODUCT_BU_ID, {
+    variables: { id },
+  });
 
   //лоудер при загрузке данных
-  if(loading) return <CatalogLayot>
-                        <ClockLoader loading={loading} color={'#e84aa4'} aria-label="загрузка данных..."/>
-                      </CatalogLayot>
+  if (loading)
+    return (
+      <CatalogLayot>
+        <ClockLoader
+          loading={loading}
+          color={"#e84aa4"}
+          aria-label="загрузка данных..."
+        />
+      </CatalogLayot>
+    );
   //если ошибка
-  if(error) return <CatalogLayot>
-                      <div>error...</div>
-                    </CatalogLayot>
+  if (error)
+    return (
+      <CatalogLayot>
+        <div>error...</div>
+      </CatalogLayot>
+    );
   //рендер компонента
-  return <CatalogLayot>
-            {!loading  && !error  && <ProductSinglePage data={data.product} />}
-        </CatalogLayot>;
+  return (
+    <CatalogLayot
+      pageSeo={{
+        title: `${data.product.title}`,
+        description: `${data.product.decsiprion}`,
+      }}
+    >
+      {!loading && !error && <ProductSinglePage data={data.product} />}
+    </CatalogLayot>
+  );
 };
 
 export default CurrenProduct;

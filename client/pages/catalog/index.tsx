@@ -1,19 +1,17 @@
 import CatalogLayot from "@/Layout/CatalogLayot";
-import { useRef } from "react";
 import Image from "next/image";
 import CallOrderButton from "@/components/Buttons/CallOrderButton";
 import { NextPage } from "next";
 import { useInView } from "react-intersection-observer";
 
 const Catalog: NextPage = () => {
-  const root = useRef<HTMLDivElement>(null);
-  const comp = useRef<HTMLParagraphElement>(null);
 
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0,
     delay: 100,
-    trackVisibility: true
+    trackVisibility: true,
+    triggerOnce: true
   });
 
 

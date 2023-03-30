@@ -1,26 +1,39 @@
 import MenuCatalog from "@/components/MenuCatalog/MenuCatalog";
 import { useAppSelector } from "@/store/hooks/hooks";
+import Head from "next/head";
 import { FC, useEffect, useState } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
 
-type iLayoutProps = {
+interface iLayoutProps {
   children: React.ReactNode;
+  pageSeo?: object
 };
 
-const CatalogLayot: FC<iLayoutProps> = ({ children }) => {
+const CatalogLayot: FC<iLayoutProps> = ({ children, pageSeo }) => {
   // компонент общей обертки - каталога
   const title = useAppSelector((state) => state.cart.titleOfCategory);
 
   const [open, setOpen] = useState(false); // стейт скрыватия категорий
 
-  useEffect(()=>{ // на дисплеях меньще 540 до дефолту категории будут скрыты
+  useEffect(() => { // на дисплеях меньще 540 до дефолту категории будут скрыты
     if(typeof window !== 'undefined'){
       const mediaQuery = window.matchMedia('(max-width: 540px)');
       mediaQuery.matches && setOpen(!open)
     }
   },[])
 
+  const seo = {
+    title: 'Стерильно.com',
+    description: 'Лучший магазин',
+    ...pageSeo
+  }
+
   return (
+    <>
+    <Head>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description}/>
+    </Head>
     <main className="body-center relative flex flex-col py-6 overflow-hidden">
       <div className="flex w-full items-end sl:flex-col sl:items-start">
         <h2 className="flex text-4xl capitalize mr-1 md:text-lg md:font-bold">{title}</h2>
@@ -39,6 +52,7 @@ const CatalogLayot: FC<iLayoutProps> = ({ children }) => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

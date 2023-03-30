@@ -1,4 +1,5 @@
 import { iSingleData } from "@/Types/common-types";
+import { Head } from "next/document";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
